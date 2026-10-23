@@ -71,11 +71,6 @@ def draw_availability(source):
     ax.grid(axis="x", alpha=0.15)
     ax.set_axisbelow(True)
     fig.subplots_adjust(left=0.20, right=0.97, top=0.84, bottom=0.27)
-    fig.text(
-        0.06,
-        0.04,
-        fontsize=10,
-    )
     return fig
 
 
@@ -141,16 +136,6 @@ def draw_map():
         y=0.98,
     )
     fig.subplots_adjust(left=0.07, right=0.96, top=0.85, bottom=0.16, wspace=0.12)
-    fig.text(
-        0.06,
-        0.08,
-        fontsize=10,
-    )
-    fig.text(
-        0.06,
-        0.035,
-        fontsize=10,
-    )
     return fig
 
 
@@ -256,11 +241,6 @@ def draw_smoke():
     )
     fig.text(
         0.06,
-        0.13,
-        fontsize=10,
-    )
-    fig.text(
-        0.06,
         0.08,
         f"729 947 смоков; {int((~finite).sum()):,} без подходящих линий. Радиусы — сценарии чувствительности".replace(
             ",", " "
@@ -327,7 +307,7 @@ def draw_sampling(diagnostics, path=ROOT / "reports/smoke_sensitivity.npz"):
             xlim=(0, 1),
             ylim=(0, 1),
             xlabel="Доля перекрытых линий",
-            ylabel=f"Доля перекрытых линий",
+            ylabel="Доля перекрытых линий",
             title=f"Шаг {step} · Spearman {setting['spearman_rank_correlation']:.3f} · n={valid.sum()}",
         )
         ax.set_aspect("equal")

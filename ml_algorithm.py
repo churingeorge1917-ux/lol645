@@ -162,7 +162,7 @@ def profile_summary(connection: sqlite3.Connection, source_hash: str) -> dict:
 def refresh_player_matches(source: Path, target: Path) -> dict:
     """Пересчитать полный профиль из исходника, не меняя модель и её выборку."""
     with database(target) as connection:
-        provenance = read_document(connection, "source")
+        read_document(connection, "source")
         extraction = read_document(connection, "extraction")
     with source.open("rb") as stream:
         source_hash = hashlib.file_digest(stream, "sha256").hexdigest()

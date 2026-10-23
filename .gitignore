@@ -10,7 +10,7 @@ __pycache__/
 *.tmp
 *.list
 *.zip
-MANIFEST.json
+/MANIFEST.json
 data/*.parquet
 demo_context/
 figures/

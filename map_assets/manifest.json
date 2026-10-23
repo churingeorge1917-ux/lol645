@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-10-23",
+  "client_version": "2000934",
+  "patch_version": "1.41.9.1",
+  "buildid": "26087496",
+  "source_revision": "11150591",
+  "release_url": "https://github.com/pnxenopoulos/awpy-data/releases/tag/2000934",
+  "release_generated_at": "2026-10-21T06:08:15.872467+00:00",
+  "coordinate_system": "Hammer XYZ, Z-up",
+  "dataset_version_match": "unverified: no source game version in input",
+  "geometry": "static, material-filtered and decimated collision mesh; no moving doors, smoke physics or penetration",
+  "game_version_evidence": "https://github.com/SteamTracking/GameTracking-CS2/blob/master/game/csgo/steam.inf",
+  "files": {
+    "de_cache.mesh": {
+      "sha256": "76193544556d261eb1ef57730cd19de5ab648713d0451ec689fbefe9271aa702",
+      "bytes": 6237892
+    },
+    "de_cache.nav": {
+      "sha256": "a3dd9d3b9b0be9fa319e7f0ab035238ea7987b9773d21e49d25438e7e8a8b0b2",
+      "bytes": 433020
+    },
+    "de_cache.png": {
+      "sha256": "94c058b3deaa5cc24be81006322da3af1ef0bbded116160a3fcdea6d87227967",
+      "bytes": 93413
+    },
+    "sightlines.npz": {
+      "sha256": "722cb407d3d3618f7e02923da604372cc9715cf69201d4aeedae562f85fccac5",
+      "bytes": 56348
+    },
+    "radar_transform.json": {
+      "sha256": "3354ea8a320b898666693b03e6b31caf728d9bc9057a40acd8011b3579db8e16",
+      "bytes": 92
+    },
+    "geometry_report.json": {
+      "sha256": "35c019c7eb8f54634677cd6e67c6cbb1c0bde2dab61c88f4e1636a791266c9fd",
+      "bytes": 1043
+    }
+  },
+  "release_artifacts": {
+    "geometry.zip": {
+      "bytes": 56674290,
+      "sha256": "edfae7235b87e6ca4cb49c453777a40991f5ba1ce438b8d9f14128bd0a8c56b3"
+    },
+    "images.zip": {
+      "bytes": 2876805,
+      "sha256": "3824c0330e628666fe63d6165335aa34809464f0c113dbc758bce3ca4ec4adbb"
+    },
+    "navs.zip": {
+      "bytes": 8432990,
+      "sha256": "90a353d8d0f4af9368898e530bdc9b0620801d4beafc3126999d27882569b1fa"
+    }
+  }
+}

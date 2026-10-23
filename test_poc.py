@@ -8,8 +8,9 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-ROOT = Path(__file__).resolve().parent
 import ml_algorithm as model
+
+ROOT = Path(__file__).resolve().parent
 
 
 def sample_match():
