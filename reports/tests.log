@@ -1,0 +1,37 @@
+test_nonapplicable_effects_are_not_known_zero (tests.test_data.ObservedEffectTests.test_nonapplicable_effects_are_not_known_zero) ... ok
+test_blind_targets_are_deduplicated_and_team_damage_is_separate (tests.test_data.SourceTests.test_blind_targets_are_deduplicated_and_team_damage_is_separate) ... ok
+test_missing_outcome_is_distinct_from_known_zero (tests.test_data.SourceTests.test_missing_outcome_is_distinct_from_known_zero) ... ok
+test_stream_reader_preserves_exact_match_ids (tests.test_data.SourceTests.test_stream_reader_preserves_exact_match_ids) ... ok
+test_unpickler_rejects_unexpected_globals (tests.test_data.SourceTests.test_unpickler_rejects_unexpected_globals) ... ok
+test_import_rejects_other_maps_and_exact_joins_preserve_unknowns (tests.test_demo.CSNetAdapterTests.test_import_rejects_other_maps_and_exact_joins_preserve_unknowns) ... ok
+test_missing_labels_never_default_to_survival_or_ct_win (tests.test_demo.CSNetAdapterTests.test_missing_labels_never_default_to_survival_or_ct_win) ... ok
+test_smoke_boundary_clipping_gaps_and_view_direction (tests.test_demo.CSNetAdapterTests.test_smoke_boundary_clipping_gaps_and_view_direction) ... ok
+test_smoke_import_runs_with_the_real_cache_geometry (tests.test_demo.CSNetAdapterTests.test_smoke_import_runs_with_the_real_cache_geometry) ... ok
+test_smoke_integration_and_marginal_overlap (tests.test_demo.CSNetAdapterTests.test_smoke_integration_and_marginal_overlap) ... ok
+test_survival_uses_deaths_after_last_sample_and_explicit_round_offset (tests.test_demo.CSNetAdapterTests.test_survival_uses_deaths_after_last_sample_and_explicit_round_offset) ... ok
+test_exact_steam_identity_and_float_rejection (tests.test_demo.DemoIntegrityTests.test_exact_steam_identity_and_float_rejection) ... ok
+test_explicit_round_end_excludes_postround_death (tests.test_demo.DemoIntegrityTests.test_explicit_round_end_excludes_postround_death) ... ok
+test_failed_import_is_atomic_and_map_mismatch_is_rejected (tests.test_demo.DemoIntegrityTests.test_failed_import_is_atomic_and_map_mismatch_is_rejected) ... ok
+test_recorded_smoke_owner_is_retained_on_real_parser_fixture (tests.test_demo.DemoIntegrityTests.test_recorded_smoke_owner_is_retained_on_real_parser_fixture) ... ok
+test_ellipsoid_chords_use_finite_segments (tests.test_geometry.GeometryTests.test_ellipsoid_chords_use_finite_segments) ... ok
+test_height_is_not_projected_away (tests.test_geometry.GeometryTests.test_height_is_not_projected_away) ... ok
+test_real_assets_and_wall_aware_visibility (tests.test_geometry.GeometryTests.test_real_assets_and_wall_aware_visibility) ... ok
+test_snapshot_requires_synchronous_telemetry (tests.test_geometry.GeometryTests.test_snapshot_requires_synchronous_telemetry) ... ok
+test_count_prediction_has_physical_support (tests.test_model.CurrentInferenceTests.test_count_prediction_has_physical_support) ... ok
+test_future_outcomes_cannot_change_release_prediction (tests.test_model.CurrentInferenceTests.test_future_outcomes_cannot_change_release_prediction) ... ok
+test_release_context_is_required_and_setup_is_explicit (tests.test_model.CurrentInferenceTests.test_release_context_is_required_and_setup_is_explicit) ... ok
+test_checksum_is_checked_before_loading (tests.test_model.SetupInferenceTests.test_checksum_is_checked_before_loading) ... ok
+test_invalid_inputs_and_probability_severity (tests.test_model.SetupInferenceTests.test_invalid_inputs_and_probability_severity) ... ok
+test_prethrow_features_exclude_recorded_effect (tests.test_model.SetupInferenceTests.test_prethrow_features_exclude_recorded_effect) ... ok
+test_cluster_bootstrap_repeats_matches_and_is_reproducible (tests.test_model.StatisticalContractTests.test_cluster_bootstrap_repeats_matches_and_is_reproducible) ... ok
+test_precision_policy_does_not_invent_an_available_operating_point (tests.test_model.StatisticalContractTests.test_precision_policy_does_not_invent_an_available_operating_point) ... ok
+test_weighted_tied_scores_match_sklearn (tests.test_model.StatisticalContractTests.test_weighted_tied_scores_match_sklearn) ... ok
+test_future_effects_and_order_cannot_change_present_features (tests.test_model.TemporalContextTests.test_future_effects_and_order_cannot_change_present_features) ... ok
+test_round_boundaries_reset_activity (tests.test_model.TemporalContextTests.test_round_boundaries_reset_activity) ... ok
+test_same_tick_and_future_releases_are_excluded (tests.test_model.TemporalContextTests.test_same_tick_and_future_releases_are_excluded) ... ok
+test_holdout_labels_cannot_change_selection_threshold_or_evaluation_fit (tests.test_model.TrainingBoundaryTests.test_holdout_labels_cannot_change_selection_threshold_or_evaluation_fit) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 37.931s
+
+OK

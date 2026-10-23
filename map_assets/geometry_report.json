@@ -1,0 +1,44 @@
+{
+  "client_version": "2000934",
+  "triangles": 338375,
+  "vertices": 181448,
+  "navigation_areas": 2209,
+  "sampled_eye_points": 715,
+  "tested_segments": 105532,
+  "clear_static_sightlines": 18022,
+  "mesh_bounds": [
+    [
+      -2398.0,
+      -2624.0,
+      1524.0
+    ],
+    [
+      3840.0009765625,
+      3797.0,
+      3330.922607421875
+    ]
+  ],
+  "eye_height_assumption": 64,
+  "sample_xy_bin": 128,
+  "sample_z_bin": 64,
+  "segment_lengths": [
+    128,
+    1600
+  ],
+  "smoke_parameters": {
+    "radius_xy": 144.0,
+    "radius_z": 96.0,
+    "center_height": 72.0,
+    "minimum_chord": 32.0,
+    "context_radius": 450.0,
+    "quantization_units": 16.0,
+    "sensitivity_radii": [
+      96.0,
+      144.0,
+      192.0
+    ],
+    "status": "geometric sensitivity assumptions; not calibrated engine smoke physics"
+  },
+  "interpretation": "Potential static lines between sampled walkable locations, not observed player sightlines or expert tactical weights",
+  "version_compatibility_with_source": "unknown; source has no game version"
+}

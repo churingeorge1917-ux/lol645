@@ -1,0 +1,30 @@
+CS-NET
+https://github.com/Gary2005/cs-net
+Reviewed commit: 268dd2193c8a3d6e330c07dde5a851196c94eeaa
+Copyright (c) 2026 Gary2005. MIT License; full text: licenses/cs-net-LICENSE.txt.
+scope_cache/demo.py is a new compatible adapter informed by the public V2 schema,
+demo_parser/extract.py and scripts/training_data/label_builder.py. It does not
+include or load CS-NET checkpoints. Survival is a retrospective observed label,
+not a prediction or a complete measure of player quality. Unknown winners and
+missing event lists remain unknown. The upstream Mirage example was used only
+to validate the importer; its observations were not mixed with Cache data.
+
+AWPY AND CACHE MAP ASSETS
+https://github.com/pnxenopoulos/awpy
+https://github.com/pnxenopoulos/awpy-data/releases/tag/2000934
+Awpy supplies the mesh reader, static visibility engine, and navigation parser.
+Prepared Cache mesh, navigation and radar assets came from the pinned awpy-data
+release. Provenance and per-file SHA256 values are in map_assets/manifest.json.
+The mesh is material-filtered and decimated static geometry, not a complete
+simulation of the game. Game map assets and associated intellectual property
+remain subject to their respective owners' terms; no ownership is claimed.
+
+DEMOPARSER
+https://github.com/LaihoE/demoparser
+Pinned fixture commit: 45ca85aeac8fb0de9d385124d2c7fe0e7b8ff0c8
+MIT License; exact upstream text: licenses/demoparser-LICENSE.txt.
+demoparser2 0.42.0 is optional for direct .dem conversion.
+tests/fixtures/demoparser_round.json.gz is a reduced first-round export
+from src/parser/test_demo.dem (de_mirage). The full demo is not bundled.
+Source/hash are recorded in reports/analysis.json.
+Used only for parser/import tests, not Cache training or smoke validation.

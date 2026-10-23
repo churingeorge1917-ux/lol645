@@ -1,0 +1,351 @@
+{
+  "unit_tests": {
+    "ok": true,
+    "tests_run": 32,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "audit": {
+    "ok": true,
+    "checks": {
+      "complete_original_events": true,
+      "all_original_matches_accounted_for": true,
+      "context_complete_and_ordered": true,
+      "context_provenance": true,
+      "Smokes_source_counts": true,
+      "Flashbangs_source_counts": true,
+      "HEs_source_counts": true,
+      "Fires_source_counts": true,
+      "redundant_proper_velocity_audited": true,
+      "model_inputs_match_provenance": true,
+      "sample_fingerprint": true,
+      "feature_allowlist_excludes_outcomes": true,
+      "test_matches_are_disjoint": true,
+      "five_training_only_folds": true,
+      "selection_uses_training_oof_only": true,
+      "prediction_file_checksum": true,
+      "prediction_identity_and_labels": true,
+      "prediction_partition_matches_manifest": true,
+      "finite_probabilities": true,
+      "evaluation_bundle_reproduces_all_test_heads": true,
+      "reported_test_metrics_recompute": true,
+      "candidate_predictions_are_training_oof_only": true,
+      "all_candidate_validation_losses_recompute": true,
+      "training_predictions_are_selected_oof": true,
+      "both_thresholds_use_training_only": true,
+      "count_head_respects_enemy_count_support": true,
+      "expectations_are_probability_times_conditional_mean": true,
+      "production_refit_separate_from_assessment": true,
+      "static_map_geometry": true,
+      "all_potential_lines_unoccluded_without_smoke": true,
+      "current_scores_checksum": true,
+      "current_scores_model_and_map_provenance": true,
+      "all_source_events_scored": true,
+      "unknown_labels_never_imputed": true,
+      "observed_effect_values_and_status_follow_grenade_type": true,
+      "enemy_view_not_fabricated": true,
+      "blind_counts_preserved_from_raw_source": true,
+      "all_known_score_heads_use_crossfit_or_holdout": true,
+      "prediction_source_labels_are_correct": true,
+      "smoke_ratios_and_radius_sensitivity": true,
+      "independent_triangle_intersections_agree": true,
+      "uncertainty_matches_evaluation_artifact": true,
+      "player_profile_throw_totals": true,
+      "player_profiles_do_not_invent_overall_rating": true
+    },
+    "counts": {
+      "events": 2385417,
+      "known_flashes": 518976,
+      "checks": 44
+    },
+    "model": {
+      "selected": "release_hist",
+      "test": {
+        "rows": 104238,
+        "matches": 1994,
+        "prevalence": 0.6404861950536272,
+        "metrics": {
+          "roc_auc": 0.7427031514511564,
+          "average_precision": 0.8300453986935696,
+          "accuracy": 0.6785721138164585,
+          "balanced_accuracy": 0.672335747759764,
+          "precision": 0.7795729657027572,
+          "recall": 0.6945314021239309,
+          "brier": 0.19030201131262128,
+          "log_loss": 0.5600906443990938,
+          "confusion_matrix": [
+            [
+              24364,
+              13111
+            ],
+            [
+              20394,
+              46369
+            ]
+          ]
+        },
+        "metrics_at_0_5": {
+          "roc_auc": 0.7427031514511564,
+          "average_precision": 0.8300453986935696,
+          "accuracy": 0.7061628197010688,
+          "balanced_accuracy": 0.635894310639738,
+          "precision": 0.7198787849284393,
+          "recall": 0.8859847520333118,
+          "brier": 0.19030201131262128,
+          "log_loss": 0.5600906443990938,
+          "confusion_matrix": [
+            [
+              14458,
+              23017
+            ],
+            [
+              7612,
+              59151
+            ]
+          ]
+        },
+        "selective_positive": {
+          "status": "evaluated",
+          "threshold": 0.6739677037573927,
+          "coverage": 0.48536042518083616,
+          "predicted_positive": 50593,
+          "precision": 0.8028185717391734,
+          "recall": 0.608375896829082
+        }
+      },
+      "confidence": {
+        "roc_auc": {
+          "estimate": 0.7427031514511564,
+          "ci95": [
+            0.7394546166577239,
+            0.746145496610611
+          ]
+        },
+        "average_precision": {
+          "estimate": 0.8300453986935696,
+          "ci95": [
+            0.8265263955062101,
+            0.8340129338767179
+          ]
+        },
+        "accuracy": {
+          "estimate": 0.6785721138164585,
+          "ci95": [
+            0.6753446742803917,
+            0.6821537353776738
+          ]
+        },
+        "balanced_accuracy": {
+          "estimate": 0.672335747759764,
+          "ci95": [
+            0.6693089799403921,
+            0.675620620755038
+          ]
+        },
+        "brier": {
+          "estimate": 0.19030201131262128,
+          "ci95": [
+            0.18888272847364004,
+            0.19157937659053842
+          ]
+        },
+        "log_loss": {
+          "estimate": 0.5600906443990938,
+          "ci95": [
+            0.5568189099091063,
+            0.5630846806540617
+          ]
+        }
+      }
+    },
+    "limitations": [
+      "Internal previously explored match holdout; no fresh external Cache validation",
+      "Registered-outcome population; missing outcomes remain unknown",
+      "Static smoke ellipsoid and map version compatibility remain uncalibrated",
+      "No causal impact or universal player KPD is claimed"
+    ]
+  },
+  "refactor_regression": {
+    "ok": true,
+    "baseline_bundle_sha256": "c91f047cf19ec739c9c86a441dc990fd8e0f31f10593391144f7ad70988f38c0",
+    "rows_compared": 2385417,
+    "float_absolute_tolerance": 1e-12,
+    "null_masks_compared_separately": true,
+    "checks": {
+      "events.parquet_bytes_unchanged": true,
+      "release_context.parquet_bytes_unchanged": true,
+      "model_weights_unchanged": true,
+      "all_saved_predictions_unchanged": true,
+      "every_current_score_value_preserved": true,
+      "player_profiles_unchanged": true
+    },
+    "score_columns": {
+      "source_row_index": true,
+      "match_id": true,
+      "player_id": true,
+      "round_index": true,
+      "projectile_id": true,
+      "side": true,
+      "type": true,
+      "observed_impact": true,
+      "outcome_status": true,
+      "observed_enemy_damage": true,
+      "observed_ally_damage": true,
+      "observed_self_damage": true,
+      "observed_enemy_flash_added": true,
+      "observed_ally_flash_added": true,
+      "observed_self_flash_added": true,
+      "recorded_fire_area_xy": true,
+      "observed_enemy_blinded_players": true,
+      "observed_ally_blinded_players": true,
+      "observed_self_blinded_players": true,
+      "predicted_flash_probability": true,
+      "expected_registered_flash_added": true,
+      "expected_blinded_enemy_players": true,
+      "flash_prediction_source": true,
+      "flash_high_precision_positive": true,
+      "potential_smoke_coverage": true,
+      "smoke_coverage_radius96": true,
+      "smoke_coverage_radius192": true,
+      "blocked_static_sightlines": true,
+      "candidate_static_sightlines": true,
+      "actual_enemy_view_blocked": true
+    },
+    "player_columns": {
+      "player_id": true,
+      "matches": true,
+      "total_throws": true,
+      "flash_throws": true,
+      "flash_known": true,
+      "flash_registered_positive": true,
+      "flash_known_effect_rate": true,
+      "flash_coverage": true,
+      "flash_enemy_flash_added": true,
+      "flash_ally_flash_added": true,
+      "flash_self_flash_added": true,
+      "flash_enemy_blinded_players": true,
+      "flash_ally_blinded_players": true,
+      "he_throws": true,
+      "he_known": true,
+      "he_registered_positive": true,
+      "he_known_effect_rate": true,
+      "he_coverage": true,
+      "he_enemy_damage": true,
+      "he_ally_damage": true,
+      "he_self_damage": true,
+      "fire_throws": true,
+      "fire_known": true,
+      "fire_registered_positive": true,
+      "fire_known_effect_rate": true,
+      "fire_coverage": true,
+      "fire_enemy_damage": true,
+      "fire_ally_damage": true,
+      "fire_self_damage": true,
+      "smoke_throws": true,
+      "smoke_known": true,
+      "smoke_mean_static_potential": true,
+      "smoke_geometric_coverage": true,
+      "flash_above_expectation": true,
+      "flash_matches": true,
+      "flash_largest_match_share": true,
+      "flash_estimation_eligible": true,
+      "flash_above_expectation_ci_low": true,
+      "flash_above_expectation_ci_high": true
+    },
+    "removed_legacy_columns": [
+      "reference_id",
+      "landing_error_units",
+      "setup_probability"
+    ]
+  },
+  "cli": {
+    "ok": true,
+    "cases": 13,
+    "checks": [
+      {
+        "command": "doctor",
+        "expected_exit_code": 0,
+        "ok": true
+      },
+      {
+        "command": "summary",
+        "expected_exit_code": 0,
+        "ok": true
+      },
+      {
+        "command": "score",
+        "expected_exit_code": 0,
+        "ok": true
+      },
+      {
+        "command": "score",
+        "expected_exit_code": 0,
+        "ok": true
+      },
+      {
+        "command": "score",
+        "expected_exit_code": 0,
+        "ok": true
+      },
+      {
+        "command": "score",
+        "expected_exit_code": 2,
+        "ok": true
+      },
+      {
+        "command": "score",
+        "expected_exit_code": 2,
+        "ok": true
+      },
+      {
+        "command": "score",
+        "expected_exit_code": 0,
+        "ok": true
+      },
+      {
+        "command": "score",
+        "expected_exit_code": 2,
+        "ok": true
+      },
+      {
+        "command": "score",
+        "expected_exit_code": 2,
+        "ok": true
+      },
+      {
+        "command": "score",
+        "expected_exit_code": 0,
+        "ok": true
+      },
+      {
+        "command": "demo",
+        "expected_exit_code": 0,
+        "ok": true
+      },
+      {
+        "command": "demo",
+        "expected_exit_code": 2,
+        "ok": true
+      }
+    ],
+    "readmes": 2,
+    "one_cli": true,
+    "model_sha256": "606fc9a89b45f318a42791d21af69fbd4a4bf95d99bc86b4280292c7d2292269"
+  },
+  "quality": {
+    "ok": true,
+    "ruff": "passed",
+    "pip_check": "passed",
+    "notebook": {
+      "cells": 23,
+      "figures": 6,
+      "executed": true
+    },
+    "terminology": "Unified CS terms; definitions in README_CONCEPT.md",
+    "readme_files": [
+      "README_TECHNICAL.md",
+      "README_CONCEPT.md"
+    ]
+  }
+}

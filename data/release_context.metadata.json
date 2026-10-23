@@ -1,0 +1,77 @@
+{
+  "schema_version": 2,
+  "rows": 2385417,
+  "matches": 10000,
+  "source_sha256": "4edf4e909349d5131ac39a6d97a9bd49436772c939c7ade3d897713dca8ebe17",
+  "events_sha256": "b9f78da86c51718d9b584b42f2896a03fb119a6aba0c56f9da165ef4f6d7537e",
+  "context_sha256": "12c31d33736dc6a2d33c1613cad0732323a44fa5ebfd64e37758a4ec3bc6704a",
+  "counts": {
+    "proper_equals_negative_player_velocity": 2385417,
+    "Smokes": 729947,
+    "Flashbangs": 643914,
+    "HEs": 565392,
+    "Fires": 446164
+  },
+  "proper_velocity_audit": {
+    "identical_to_negative_player_velocity": 2385417,
+    "maximum_residual_norm": 0.0,
+    "interpretation": "Redundant field; must not be described as initial projectile velocity"
+  },
+  "feature_allowlist": [
+    "release_offset_x",
+    "release_offset_y",
+    "release_offset_z",
+    "past_smokes_own",
+    "past_smokes_opponent",
+    "past_flashbangs_own",
+    "past_flashbangs_opponent",
+    "past_hes_own",
+    "past_hes_opponent",
+    "past_fires_own",
+    "past_fires_opponent",
+    "past_player_throws",
+    "ticks_since_first_grenade",
+    "ticks_since_own_grenade",
+    "ticks_since_opponent_grenade"
+  ],
+  "feature_time": "release; strictly previous throws in the same round, excluding equal-tick throws",
+  "past_context_units": "original demo ticks; -1 means no previous throw on that side; no conversion to seconds",
+  "limitations": [
+    "Source does not record confirmed projectile launch speed or throw strength",
+    "Release context is server-observed information, not necessarily known to the player",
+    "Round activity clock starts at the first recorded grenade, not at round start",
+    "Blind counts are retrospective outcomes, never model inputs"
+  ],
+  "storage": "Compact numeric sidecar keyed by immutable source_row_index; original event file SHA256 fixes identity/order",
+  "rebuild_verification": {
+    "ok": true,
+    "rows": 2385417,
+    "schema_equal": true,
+    "column_equality": {
+      "source_row_index": true,
+      "type": true,
+      "release_offset_x": true,
+      "release_offset_y": true,
+      "release_offset_z": true,
+      "past_smokes_own": true,
+      "past_smokes_opponent": true,
+      "past_flashbangs_own": true,
+      "past_flashbangs_opponent": true,
+      "past_hes_own": true,
+      "past_hes_opponent": true,
+      "past_fires_own": true,
+      "past_fires_opponent": true,
+      "past_player_throws": true,
+      "ticks_since_first_grenade": true,
+      "ticks_since_own_grenade": true,
+      "ticks_since_opponent_grenade": true,
+      "enemy_blinded_players": true,
+      "ally_blinded_players": true,
+      "self_blinded_players": true
+    },
+    "stored_sha256": "12c31d33736dc6a2d33c1613cad0732323a44fa5ebfd64e37758a4ec3bc6704a",
+    "rebuilt_sha256": "12c31d33736dc6a2d33c1613cad0732323a44fa5ebfd64e37758a4ec3bc6704a",
+    "source_sha256": "4edf4e909349d5131ac39a6d97a9bd49436772c939c7ade3d897713dca8ebe17",
+    "method": "Re-extracted all context from pinned original 1.57 GB source using delivered extractor; compared every column in source order"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 4,
+  "rows": 2385417,
+  "events_sha256": "b9f78da86c51718d9b584b42f2896a03fb119a6aba0c56f9da165ef4f6d7537e",
+  "context_sha256": "12c31d33736dc6a2d33c1613cad0732323a44fa5ebfd64e37758a4ec3bc6704a",
+  "model_sha256": "606fc9a89b45f318a42791d21af69fbd4a4bf95d99bc86b4280292c7d2292269",
+  "map_manifest_sha256": "d98f7415de760d385d3b8e57e3fc1d495af54f3829784853d224fbb0dd96f638",
+  "scores_sha256": "618fb8ee0bd2a7149f16ee9de1652731f7a26c0265e02bfd0e12f208c5e9088f",
+  "flash_model": "release_hist",
+  "flash_prediction_sources": "Known outcomes: match OOF / held-out; unknown outcomes: separate deployment predictions",
+  "smoke_interpretation": "Approximate static line-of-sight coverage; actual enemy vision is unknown"
+}

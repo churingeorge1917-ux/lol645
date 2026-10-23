@@ -1,0 +1,1511 @@
+{
+  "model": {
+    "model_sha256": "606fc9a89b45f318a42791d21af69fbd4a4bf95d99bc86b4280292c7d2292269",
+    "data": {
+      "events_sha256": "b9f78da86c51718d9b584b42f2896a03fb119a6aba0c56f9da165ef4f6d7537e",
+      "context_sha256": "12c31d33736dc6a2d33c1613cad0732323a44fa5ebfd64e37758a4ec3bc6704a"
+    },
+    "uncertainty": {
+      "method": "Percentile bootstrap of whole match clusters, event-weighted metrics",
+      "clusters": 1994,
+      "repetitions": 300,
+      "seed": 714,
+      "confidence_level": 0.95,
+      "metrics": {
+        "roc_auc": {
+          "estimate": 0.7427031514511564,
+          "ci95": [
+            0.7394546166577239,
+            0.746145496610611
+          ]
+        },
+        "average_precision": {
+          "estimate": 0.8300453986935696,
+          "ci95": [
+            0.8265263955062101,
+            0.8340129338767179
+          ]
+        },
+        "accuracy": {
+          "estimate": 0.6785721138164585,
+          "ci95": [
+            0.6753446742803917,
+            0.6821537353776738
+          ]
+        },
+        "balanced_accuracy": {
+          "estimate": 0.672335747759764,
+          "ci95": [
+            0.6693089799403921,
+            0.675620620755038
+          ]
+        },
+        "brier": {
+          "estimate": 0.19030201131262128,
+          "ci95": [
+            0.18888272847364004,
+            0.19157937659053842
+          ]
+        },
+        "log_loss": {
+          "estimate": 0.5600906443990938,
+          "ci95": [
+            0.5568189099091063,
+            0.5630846806540617
+          ]
+        }
+      },
+      "paired_difference_vs_setup": {
+        "roc_auc": {
+          "estimate": 0.025412385373981827,
+          "ci95": [
+            0.023723542851093758,
+            0.027112629212651528
+          ]
+        },
+        "average_precision": {
+          "estimate": 0.019798848671037428,
+          "ci95": [
+            0.01838154106178249,
+            0.02107510494788737
+          ]
+        },
+        "accuracy": {
+          "estimate": 0.016740536080891877,
+          "ci95": [
+            0.014461325068002604,
+            0.01936737989263686
+          ]
+        },
+        "balanced_accuracy": {
+          "estimate": 0.017920794312125565,
+          "ci95": [
+            0.01558994084421795,
+            0.02049339374200233
+          ]
+        },
+        "brier": {
+          "estimate": -0.007928393392275634,
+          "ci95": [
+            -0.008399139934364806,
+            -0.007490878170743346
+          ]
+        },
+        "log_loss": {
+          "estimate": -0.019666114263558132,
+          "ci95": [
+            -0.02073278390070279,
+            -0.01865528730601803
+          ]
+        }
+      }
+    },
+    "selective_positive": {
+      "status": "evaluated",
+      "threshold": 0.6739677037573927,
+      "coverage": 0.48536042518083616,
+      "predicted_positive": 50593,
+      "precision": 0.8028185717391734,
+      "recall": 0.608375896829082,
+      "precision_ci95": [
+        0.7993198835144609,
+        0.8062744174709204
+      ],
+      "method": "Percentile bootstrap of whole held-out matches; threshold frozen using training OOF only"
+    },
+    "slices": [
+      {
+        "slice": "T",
+        "rows": 60708,
+        "matches": 1989,
+        "metrics": {
+          "roc_auc": 0.75848154539727,
+          "average_precision": 0.8645137230287594,
+          "accuracy": 0.7203333992225077,
+          "balanced_accuracy": 0.6735555764736537,
+          "precision": 0.7946300715990453,
+          "recall": 0.7990544302582318,
+          "brier": 0.17280941144382297,
+          "log_loss": 0.5187389059282768,
+          "confusion_matrix": [
+            [
+              10435,
+              8605
+            ],
+            [
+              8373,
+              33295
+            ]
+          ]
+        }
+      },
+      {
+        "slice": "CT",
+        "rows": 43530,
+        "matches": 1979,
+        "metrics": {
+          "roc_auc": 0.6999834358755956,
+          "average_precision": 0.7485490267880246,
+          "accuracy": 0.6203308063404549,
+          "balanced_accuracy": 0.6382769560292532,
+          "precision": 0.7436860068259386,
+          "recall": 0.5209802749551703,
+          "brier": 0.21469761785603975,
+          "log_loss": 0.6177607877275193,
+          "confusion_matrix": [
+            [
+              13929,
+              4506
+            ],
+            [
+              12021,
+              13074
+            ]
+          ]
+        }
+      },
+      {
+        "slice": "round_0_5",
+        "rows": 25337,
+        "matches": 1990,
+        "metrics": {
+          "roc_auc": 0.7384710847969415,
+          "average_precision": 0.8277168625289484,
+          "accuracy": 0.6742313612503453,
+          "balanced_accuracy": 0.6689865011991962,
+          "precision": 0.7774213792622551,
+          "recall": 0.6877428906298193,
+          "brier": 0.19186529262217436,
+          "log_loss": 0.5636542095245979,
+          "confusion_matrix": [
+            [
+              5934,
+              3192
+            ],
+            [
+              5062,
+              11149
+            ]
+          ]
+        }
+      },
+      {
+        "slice": "round_6_11",
+        "rows": 35461,
+        "matches": 1971,
+        "metrics": {
+          "roc_auc": 0.7450119875362126,
+          "average_precision": 0.8294465057734324,
+          "accuracy": 0.6782380643523871,
+          "balanced_accuracy": 0.6733486386377877,
+          "precision": 0.7784374376371982,
+          "recall": 0.6912546517809676,
+          "brier": 0.19033233936161448,
+          "log_loss": 0.5601341700359065,
+          "confusion_matrix": [
+            [
+              8448,
+              4441
+            ],
+            [
+              6969,
+              15603
+            ]
+          ]
+        }
+      },
+      {
+        "slice": "round_12_plus",
+        "rows": 43440,
+        "matches": 1904,
+        "metrics": {
+          "roc_auc": 0.7432078644698162,
+          "average_precision": 0.8319002494916032,
+          "accuracy": 0.6813766114180478,
+          "balanced_accuracy": 0.6733870848425275,
+          "precision": 0.7817095038852361,
+          "recall": 0.701107934238742,
+          "brier": 0.1893654477425132,
+          "log_loss": 0.5579766132712874,
+          "confusion_matrix": [
+            [
+              9982,
+              5478
+            ],
+            [
+              8363,
+              19617
+            ]
+          ]
+        }
+      },
+      {
+        "slice": "airborne",
+        "rows": 15025,
+        "matches": 1926,
+        "metrics": {
+          "roc_auc": 0.7632450234973234,
+          "average_precision": 0.8239733627398693,
+          "accuracy": 0.6678868552412646,
+          "balanced_accuracy": 0.6871743323776986,
+          "precision": 0.802793124616329,
+          "recall": 0.5853849597135183,
+          "brier": 0.19185428353259876,
+          "log_loss": 0.5628910744569867,
+          "confusion_matrix": [
+            [
+              4804,
+              1285
+            ],
+            [
+              3705,
+              5231
+            ]
+          ]
+        }
+      },
+      {
+        "slice": "grounded",
+        "rows": 89213,
+        "matches": 1993,
+        "metrics": {
+          "roc_auc": 0.7376562982395745,
+          "average_precision": 0.8306621679881279,
+          "accuracy": 0.6803716947081704,
+          "balanced_accuracy": 0.6673027948078025,
+          "precision": 0.7767162601012008,
+          "recall": 0.7113977899597074,
+          "brier": 0.19004058203544014,
+          "log_loss": 0.5596190039249495,
+          "confusion_matrix": [
+            [
+              19560,
+              11826
+            ],
+            [
+              16689,
+              41138
+            ]
+          ]
+        }
+      },
+      {
+        "slice": "unseen_thrower",
+        "rows": 90039,
+        "matches": 1992,
+        "metrics": {
+          "roc_auc": 0.7443946602197454,
+          "average_precision": 0.8309776036086842,
+          "accuracy": 0.6796721420717688,
+          "balanced_accuracy": 0.6738568709896144,
+          "precision": 0.7810927810927811,
+          "recall": 0.694548481065335,
+          "brier": 0.18975848050866598,
+          "log_loss": 0.5588491053448533,
+          "confusion_matrix": [
+            [
+              21141,
+              11226
+            ],
+            [
+              17616,
+              40056
+            ]
+          ]
+        }
+      },
+      {
+        "slice": "seen_thrower",
+        "rows": 14199,
+        "matches": 1131,
+        "metrics": {
+          "roc_auc": 0.7321207210793985,
+          "average_precision": 0.8243476090993116,
+          "accuracy": 0.6715965913092471,
+          "balanced_accuracy": 0.6626970408056295,
+          "precision": 0.770065869724323,
+          "recall": 0.6944230557694423,
+          "brier": 0.1937486603764519,
+          "log_loss": 0.5679635181863154,
+          "confusion_matrix": [
+            [
+              3223,
+              1885
+            ],
+            [
+              2778,
+              6313
+            ]
+          ]
+        }
+      }
+    ],
+    "same_capacity_information_ablation": {
+      "status": "diagnostic; not used to retune the frozen model on test",
+      "model": "same HGB 200 iterations, 31 leaves, min leaf 100, L2 10",
+      "setup_oof": {
+        "roc_auc": 0.7276302277597115,
+        "average_precision": 0.8179880437767844,
+        "accuracy": 0.6985639126388226,
+        "balanced_accuracy": 0.6240281473483011,
+        "precision": 0.7110701917493328,
+        "recall": 0.8907432534298206,
+        "brier": 0.19511323436104358,
+        "log_loss": 0.5718766830770065,
+        "confusion_matrix": [
+          [
+            53389,
+            96029
+          ],
+          [
+            28988,
+            236332
+          ]
+        ]
+      },
+      "release_oof": {
+        "roc_auc": 0.7434673114679076,
+        "average_precision": 0.8298832787556395,
+        "accuracy": 0.7078179477163896,
+        "balanced_accuracy": 0.638015901743995,
+        "precision": 0.7204280685227721,
+        "recall": 0.8877921001055329,
+        "brier": 0.1900795785052495,
+        "log_loss": 0.5595326027016854,
+        "confusion_matrix": [
+          [
+            58010,
+            91408
+          ],
+          [
+            29771,
+            235549
+          ]
+        ]
+      },
+      "setup_test": {
+        "roc_auc": 0.7264057621526754,
+        "average_precision": 0.8173282458877745,
+        "accuracy": 0.6976630403499683,
+        "balanced_accuracy": 0.6235755872457428,
+        "precision": 0.7117658367778525,
+        "recall": 0.8872579123167024,
+        "brier": 0.1953853820436701,
+        "log_loss": 0.5724965006963538,
+        "confusion_matrix": [
+          [
+            13487,
+            23988
+          ],
+          [
+            7527,
+            59236
+          ]
+        ]
+      },
+      "release_test": {
+        "roc_auc": 0.7427031514511564,
+        "average_precision": 0.8300453986935696,
+        "accuracy": 0.7061628197010688,
+        "balanced_accuracy": 0.635894310639738,
+        "precision": 0.7198787849284393,
+        "recall": 0.8859847520333118,
+        "brier": 0.19030201131262128,
+        "log_loss": 0.5600906443990938,
+        "confusion_matrix": [
+          [
+            14458,
+            23017
+          ],
+          [
+            7612,
+            59151
+          ]
+        ]
+      },
+      "paired_match_ci": {
+        "method": "Percentile bootstrap of whole match clusters, event-weighted metrics",
+        "clusters": 1994,
+        "repetitions": 300,
+        "seed": 714,
+        "confidence_level": 0.95,
+        "metrics": {
+          "roc_auc": {
+            "estimate": 0.7427031514511564,
+            "ci95": [
+              0.7394546166577239,
+              0.746145496610611
+            ]
+          },
+          "average_precision": {
+            "estimate": 0.8300453986935696,
+            "ci95": [
+              0.8265263955062101,
+              0.8340129338767179
+            ]
+          },
+          "accuracy": {
+            "estimate": 0.6785721138164585,
+            "ci95": [
+              0.6753446742803917,
+              0.6821537353776738
+            ]
+          },
+          "balanced_accuracy": {
+            "estimate": 0.672335747759764,
+            "ci95": [
+              0.6693089799403921,
+              0.675620620755038
+            ]
+          },
+          "brier": {
+            "estimate": 0.19030201131262128,
+            "ci95": [
+              0.18888272847364004,
+              0.19157937659053842
+            ]
+          },
+          "log_loss": {
+            "estimate": 0.5600906443990938,
+            "ci95": [
+              0.5568189099091063,
+              0.5630846806540617
+            ]
+          }
+        },
+        "paired_difference_vs_setup": {
+          "roc_auc": {
+            "estimate": 0.016297389298481013,
+            "ci95": [
+              0.014552956577648357,
+              0.0181077031489441
+            ]
+          },
+          "average_precision": {
+            "estimate": 0.012717152805795107,
+            "ci95": [
+              0.01129281804715702,
+              0.014029543885788798
+            ]
+          },
+          "accuracy": {
+            "estimate": 0.013526736890577373,
+            "ci95": [
+              0.011290589199741814,
+              0.016263206351755006
+            ]
+          },
+          "balanced_accuracy": {
+            "estimate": 0.012526365978879017,
+            "ci95": [
+              0.010322719864565769,
+              0.015421233251921395
+            ]
+          },
+          "brier": {
+            "estimate": -0.0050833707310488085,
+            "ci95": [
+              -0.005576435692743619,
+              -0.004579019295033201
+            ]
+          },
+          "log_loss": {
+            "estimate": -0.012405856297260098,
+            "ci95": [
+              -0.013525492545806747,
+              -0.011295201333258289
+            ]
+          }
+        }
+      }
+    },
+    "missingness": {
+      "all_flash_rows": 643914,
+      "known_rows": 518976,
+      "unknown_rows": 124938,
+      "known_fraction": 0.8059709837027926,
+      "registered_effect_rate_bounds": [
+        0.5157257025006445,
+        0.7097547187978519
+      ],
+      "registration_prediction_test": {
+        "roc_auc": 0.6899124954055936,
+        "average_precision": 0.9009187998552648,
+        "accuracy": 0.8074061457228463,
+        "balanced_accuracy": 0.5022956068651089,
+        "precision": 0.8077430162398598,
+        "recall": 0.999174964983979,
+        "brier": 0.14490734503737931,
+        "log_loss": 0.45419571041880497,
+        "confusion_matrix": [
+          [
+            135,
+            24790
+          ],
+          [
+            86,
+            104152
+          ]
+        ]
+      },
+      "interpretation": "Predictable registration suggests selection differences; no missing-at-random claim, no label imputation or inverse-probability causal correction"
+    },
+    "heldout_error_examples": [
+      {
+        "source_row_index": 707153,
+        "match_id": "3831212575807242910",
+        "player_id": "1252968320",
+        "round_index": 9,
+        "side": 2,
+        "player_x": 1556.687255859375,
+        "player_y": -654.5240478515625,
+        "player_z": 1608.0313720703125,
+        "pitch": -6.4881134033203125,
+        "yaw": -164.20166015625,
+        "impact": 1,
+        "enemy_blinded_players": 1,
+        "probability": 0.014377117166916671
+      },
+      {
+        "source_row_index": 1824665,
+        "match_id": "3830990957642252580",
+        "player_id": "1277993268",
+        "round_index": 20,
+        "side": 2,
+        "player_x": 1619.8934326171875,
+        "player_y": -663.7828369140625,
+        "player_z": 1608.0313720703125,
+        "pitch": 8.144989013671875,
+        "yaw": -164.8834991455078,
+        "impact": 1,
+        "enemy_blinded_players": 1,
+        "probability": 0.01741473316211686
+      },
+      {
+        "source_row_index": 648880,
+        "match_id": "3831218167854662336",
+        "player_id": "479611172",
+        "round_index": 13,
+        "side": 2,
+        "player_x": 1664.2236328125,
+        "player_y": -667.76123046875,
+        "player_z": 1608.0313720703125,
+        "pitch": -14.5531005859375,
+        "yaw": -165.2790069580078,
+        "impact": 1,
+        "enemy_blinded_players": 1,
+        "probability": 0.026790685661640366
+      },
+      {
+        "source_row_index": 936002,
+        "match_id": "3830716708948017644",
+        "player_id": "83983045",
+        "round_index": 5,
+        "side": 2,
+        "player_x": 1603.6759033203125,
+        "player_y": -706.8995971679688,
+        "player_z": 1608.0313720703125,
+        "pitch": -12.0118408203125,
+        "yaw": -168.01150512695312,
+        "impact": 1,
+        "enemy_blinded_players": 1,
+        "probability": 0.027439580746941906
+      },
+      {
+        "source_row_index": 1670255,
+        "match_id": "3831019416095556142",
+        "player_id": "120642752",
+        "round_index": 6,
+        "side": 2,
+        "player_x": 1654.9354248046875,
+        "player_y": -683.5498046875,
+        "player_z": 1608.0313720703125,
+        "pitch": 2.595855712890625,
+        "yaw": -166.81607055664062,
+        "impact": 1,
+        "enemy_blinded_players": 1,
+        "probability": 0.027620988400483604
+      },
+      {
+        "source_row_index": 1872317,
+        "match_id": "3830974686158651437",
+        "player_id": "175924933",
+        "round_index": 7,
+        "side": 2,
+        "player_x": 1465.8858642578125,
+        "player_y": 720.3413696289062,
+        "player_z": 1608.03125,
+        "pitch": -20.73394775390625,
+        "yaw": -163.26678466796875,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9715222208861094
+      },
+      {
+        "source_row_index": 542855,
+        "match_id": "3831232564585038089",
+        "player_id": "83285992",
+        "round_index": 13,
+        "side": 2,
+        "player_x": 1350.3951416015625,
+        "player_y": 733.3807983398438,
+        "player_z": 1608.03125,
+        "pitch": -24.980850219726562,
+        "yaw": -158.00228881835938,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9673397620670363
+      },
+      {
+        "source_row_index": 2185912,
+        "match_id": "3830868065743012350",
+        "player_id": "963041920",
+        "round_index": 4,
+        "side": 2,
+        "player_x": 1754.970458984375,
+        "player_y": 237.46348571777344,
+        "player_z": 1612.03125,
+        "pitch": -10.753555297851562,
+        "yaw": 177.90985107421875,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.967324695764468
+      },
+      {
+        "source_row_index": 1730867,
+        "match_id": "3830304033457832671",
+        "player_id": "365491754",
+        "round_index": 8,
+        "side": 2,
+        "player_x": 1782.970458984375,
+        "player_y": 243.64451599121094,
+        "player_z": 1611.7440185546875,
+        "pitch": -10.416412353515625,
+        "yaw": 179.40740966796875,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9667882320710878
+      },
+      {
+        "source_row_index": 593106,
+        "match_id": "3830834152681242946",
+        "player_id": "200881816",
+        "round_index": 9,
+        "side": 2,
+        "player_x": 1440.8349609375,
+        "player_y": -714.9969482421875,
+        "player_z": 1610.096435546875,
+        "pitch": 2.001922607421875,
+        "yaw": -165.50559997558594,
+        "impact": 1,
+        "enemy_blinded_players": 1,
+        "probability": 0.03380183741432677
+      },
+      {
+        "source_row_index": 948586,
+        "match_id": "3831149633061519631",
+        "player_id": "259221015",
+        "round_index": 10,
+        "side": 2,
+        "player_x": 1409.0509033203125,
+        "player_y": 658.3494873046875,
+        "player_z": 1608.03125,
+        "pitch": -23.881195068359375,
+        "yaw": -166.6138458251953,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9658520466946854
+      },
+      {
+        "source_row_index": 1688424,
+        "match_id": "3831016766100734849",
+        "player_id": "1696573339",
+        "round_index": 0,
+        "side": 2,
+        "player_x": 1807.7047119140625,
+        "player_y": 254.678466796875,
+        "player_z": 1611.4051513671875,
+        "pitch": -10.2794189453125,
+        "yaw": -179.3401336669922,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9657258039591444
+      },
+      {
+        "source_row_index": 1325972,
+        "match_id": "3830856578852978995",
+        "player_id": "1074187801",
+        "round_index": 8,
+        "side": 2,
+        "player_x": 1892.73583984375,
+        "player_y": -633.6749267578125,
+        "player_z": 1608.034423828125,
+        "pitch": -5.484588623046875,
+        "yaw": -166.79339599609375,
+        "impact": 1,
+        "enemy_blinded_players": 1,
+        "probability": 0.034467455452475745
+      },
+      {
+        "source_row_index": 820829,
+        "match_id": "3831189537602667110",
+        "player_id": "1126593597",
+        "round_index": 9,
+        "side": 2,
+        "player_x": 1822.9881591796875,
+        "player_y": 256.57086181640625,
+        "player_z": 1611.19580078125,
+        "pitch": -10.97808837890625,
+        "yaw": 177.97406005859375,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9652206763525691
+      },
+      {
+        "source_row_index": 1545396,
+        "match_id": "3831036529392746892",
+        "player_id": "126029568",
+        "round_index": 10,
+        "side": 2,
+        "player_x": 1869.70068359375,
+        "player_y": 254.9507598876953,
+        "player_z": 1610.555908203125,
+        "pitch": -9.81524658203125,
+        "yaw": 178.66928100585938,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9647785614870086
+      },
+      {
+        "source_row_index": 502724,
+        "match_id": "3831237495207494183",
+        "player_id": "901310239",
+        "round_index": 8,
+        "side": 2,
+        "player_x": 1311.5606689453125,
+        "player_y": 634.6802978515625,
+        "player_z": 1608.03125,
+        "pitch": -20.305145263671875,
+        "yaw": -167.48245239257812,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9647189331609867
+      },
+      {
+        "source_row_index": 1207253,
+        "match_id": "3830862123655757841",
+        "player_id": "157610180",
+        "round_index": 7,
+        "side": 2,
+        "player_x": 1377.91796875,
+        "player_y": 716.370361328125,
+        "player_z": 1608.03125,
+        "pitch": -22.7269287109375,
+        "yaw": -160.09620666503906,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9625455465755401
+      },
+      {
+        "source_row_index": 1665856,
+        "match_id": "3831005713002397756",
+        "player_id": "1617401407",
+        "round_index": 10,
+        "side": 2,
+        "player_x": 1482.9515380859375,
+        "player_y": 705.6851806640625,
+        "player_z": 1608.03125,
+        "pitch": -27.452423095703125,
+        "yaw": -164.64144897460938,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9623948058923035
+      },
+      {
+        "source_row_index": 1018181,
+        "match_id": "3831107750687932524",
+        "player_id": "131448649",
+        "round_index": 20,
+        "side": 2,
+        "player_x": 1370.2078857421875,
+        "player_y": 677.6943359375,
+        "player_z": 1608.03125,
+        "pitch": -23.5179443359375,
+        "yaw": -163.5321807861328,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9622310707425097
+      },
+      {
+        "source_row_index": 882822,
+        "match_id": "3831173279003967743",
+        "player_id": "1920914095",
+        "round_index": 22,
+        "side": 2,
+        "player_x": 1581.551513671875,
+        "player_y": 674.84716796875,
+        "player_z": 1608.03125,
+        "pitch": -24.63134765625,
+        "yaw": -166.54312133789062,
+        "impact": 0,
+        "enemy_blinded_players": 0,
+        "probability": 0.9621587974938101
+      }
+    ],
+    "external_evaluation": {
+      "status": "not_available",
+      "reason": "No independently obtained, matched Cache demos with player-eye/smoke telemetry have been verified"
+    },
+    "interpretation": "Internal, previously explored match holdout. Confidence intervals quantify match-sampling variation, not deployment validity or causal impact."
+  },
+  "smoke": {
+    "map_client_version": "2000934",
+    "sample": {
+      "unit": "unique occupied 16-unit endpoint cell, equally weighted; not throw frequency",
+      "seed": 817,
+      "cells": 2000,
+      "population_cells": 30830
+    },
+    "coordinate_alignment": {
+      "method": "Distance to nearest nav-area centroid; diagnostic only, not an exact walkable polygon or version match",
+      "smoke_events": 729947,
+      "distance_quantiles_units": {
+        "median": 33.074152248692364,
+        "p90": 66.63173648981162,
+        "p99": 183.99010805019452,
+        "maximum": 1474.4436434005831
+      },
+      "fraction_within_128_units": 0.9843372190035715,
+      "fraction_within_256_units": 0.995687358123261,
+      "source_game_version_compatibility": "unverified"
+    },
+    "graphs": [
+      {
+        "xy_bin_units": 128,
+        "clear_segments": 18022,
+        "eye_points": 715
+      },
+      {
+        "xy_bin_units": 64,
+        "eye_points": 1247,
+        "clear_segments": 53399
+      },
+      {
+        "xy_bin_units": 256,
+        "eye_points": 299,
+        "clear_segments": 3174
+      }
+    ],
+    "sampling_sensitivity": [
+      {
+        "xy_bin_units": 64,
+        "paired_cells": 1969,
+        "spearman_rank_correlation": 0.9695576381655073,
+        "absolute_score_difference_quantiles": {
+          "median": 0.016069109699005935,
+          "p90": 0.04832918685323897,
+          "p99": 0.08239665325800923
+        }
+      },
+      {
+        "xy_bin_units": 256,
+        "paired_cells": 1964,
+        "spearman_rank_correlation": 0.9019372168766162,
+        "absolute_score_difference_quantiles": {
+          "median": 0.027694224553418193,
+          "p90": 0.09290634255580438,
+          "p99": 0.15209142316064278
+        }
+      }
+    ],
+    "radius_sensitivity": {
+      "radii_xy_units": [
+        96,
+        144,
+        192
+      ],
+      "monotonic_for_valid_cells": true,
+      "interpretation": "Sensitivity scenarios, not confidence intervals or calibrated smoke physics"
+    },
+    "independent_ray_validation": {
+      "method": "Moller-Trumbore intersection against all 338375 triangles, compared with Rust BVH",
+      "rays": 32,
+      "all_agree": true,
+      "cases": [
+        {
+          "origin": [
+            903.0009765625,
+            -569.875,
+            1679.0
+          ],
+          "target": [
+            1719.0009765625,
+            -794.9998168945312,
+            1681.0
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -76.99909210205078,
+            -87.20001220703125,
+            1677.9998779296875
+          ],
+          "target": [
+            -278.2491149902344,
+            944.7500610351562,
+            1752.0
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            1265.0010986328125,
+            273.0,
+            1680.0
+          ],
+          "target": [
+            1547.0009765625,
+            430.5,
+            1680.0
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            1061.0010986328125,
+            -879.9998168945312,
+            1678.6666259765625
+          ],
+          "target": [
+            920.5010375976562,
+            -1067.9998779296875,
+            1678.6666259765625
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            1233.0009765625,
+            964.2500610351562,
+            1680.0
+          ],
+          "target": [
+            2102.6259765625,
+            205.81248474121094,
+            1679.0
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -299.2491455078125,
+            27.874961853027344,
+            1730.0
+          ],
+          "target": [
+            381.0009765625,
+            426.0,
+            1678.6666259765625
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            300.3759460449219,
+            1556.75,
+            1749.9998779296875
+          ],
+          "target": [
+            -141.3740997314453,
+            2197.25,
+            1750.4998779296875
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            1997.4384765625,
+            332.75,
+            1678.0
+          ],
+          "target": [
+            2108.0009765625,
+            705.0000610351562,
+            1675.9998779296875
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -1225.1239013671875,
+            462.875,
+            1681.0
+          ],
+          "target": [
+            -1332.9989013671875,
+            625.0000610351562,
+            1743.9998779296875
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            314.5009460449219,
+            289.0,
+            1678.0
+          ],
+          "target": [
+            771.0009765625,
+            247.5,
+            1825.3333740234375
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            289.50091552734375,
+            1443.5001220703125,
+            1861.9998779296875
+          ],
+          "target": [
+            -105.49910736083984,
+            2059.5,
+            1749.9998779296875
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            1833.5009765625,
+            655.5,
+            1744.66650390625
+          ],
+          "target": [
+            2147.4384765625,
+            430.4375,
+            1675.9998779296875
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -806.9988403320312,
+            850.5000610351562,
+            1757.3333740234375
+          ],
+          "target": [
+            1984.0009765625,
+            424.5,
+            1675.9998779296875
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            870.5009765625,
+            145.99996948242188,
+            1773.9998779296875
+          ],
+          "target": [
+            31.50090980529785,
+            1297.0001220703125,
+            1941.3333740234375
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            2249.5009765625,
+            -1038.9998779296875,
+            1682.0
+          ],
+          "target": [
+            285.7509460449219,
+            -654.2501220703125,
+            1675.9998779296875
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            1684.8759765625,
+            -1071.2498779296875,
+            1682.0
+          ],
+          "target": [
+            2117.2509765625,
+            -1066.7498779296875,
+            1682.0
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -194.9990997314453,
+            -1420.9998779296875,
+            1725.9998779296875
+          ],
+          "target": [
+            -136.9990997314453,
+            1289.0,
+            1754.0
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -63.99909973144531,
+            -746.9999389648438,
+            1675.9998779296875
+          ],
+          "target": [
+            1343.0009765625,
+            608.0000610351562,
+            1675.9998779296875
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            1281.5010986328125,
+            1425.5,
+            1768.6666259765625
+          ],
+          "target": [
+            2192.2509765625,
+            -1094.8748779296875,
+            1682.0
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            1526.2509765625,
+            -602.5001220703125,
+            1677.4998779296875
+          ],
+          "target": [
+            206.5009307861328,
+            -405.0000915527344,
+            1680.0
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            656.8134765625,
+            2088.5,
+            1769.9998779296875
+          ],
+          "target": [
+            963.3760375976562,
+            -409.00006103515625,
+            1828.0
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            3008.0009765625,
+            148.99998474121094,
+            1678.0
+          ],
+          "target": [
+            -16.249094009399414,
+            1346.0001220703125,
+            1754.0
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            308.7509460449219,
+            1791.5,
+            1752.0
+          ],
+          "target": [
+            676.7509765625,
+            -45.00004196166992,
+            1718.0
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            2201.2509765625,
+            -1037.4998779296875,
+            1682.0
+          ],
+          "target": [
+            -49.49909973144531,
+            336.5,
+            1675.9998779296875
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -141.3740997314453,
+            2197.25,
+            1750.4998779296875
+          ],
+          "target": [
+            -12.999099731445312,
+            1507.0,
+            1749.9998779296875
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            2187.0009765625,
+            770.0000610351562,
+            1678.6666259765625
+          ],
+          "target": [
+            -1714.9990234375,
+            589.0000610351562,
+            1680.0
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -133.87411499023438,
+            1862.0,
+            1749.9998779296875
+          ],
+          "target": [
+            415.1259460449219,
+            1988.0,
+            1944.0
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            778.5009765625,
+            919.5000610351562,
+            1768.0
+          ],
+          "target": [
+            3243.0009765625,
+            -339.50006103515625,
+            1682.0
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -805.4988403320312,
+            1054.5001220703125,
+            1807.3333740234375
+          ],
+          "target": [
+            -977.6239013671875,
+            405.125,
+            1680.0
+          ],
+          "bvh_visible": true,
+          "all_triangles_reference_visible": true,
+          "agreement": true
+        },
+        {
+          "origin": [
+            778.8759765625,
+            1706.75,
+            1768.0
+          ],
+          "target": [
+            -1640.9990234375,
+            400.0,
+            1694.6666259765625
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            341.5009460449219,
+            1487.0003662109375,
+            1813.9998779296875
+          ],
+          "target": [
+            2441.5009765625,
+            214.99998474121094,
+            1804.0
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        },
+        {
+          "origin": [
+            -931.8739013671875,
+            943.8125610351562,
+            1738.5
+          ],
+          "target": [
+            1843.8759765625,
+            380.75,
+            1676.4998779296875
+          ],
+          "bvh_visible": false,
+          "all_triangles_reference_visible": false,
+          "agreement": true
+        }
+      ]
+    },
+    "actual_smoke_validation": {
+      "status": "not_available",
+      "required": "Matched Cache demos, known map build and synchronized player-eye/smoke telemetry; renderer observations to calibrate occlusion"
+    },
+    "limitations": [
+      "Static sampled potential is not enemy-specific or side-specific tactical value",
+      "Changing graph resolution changes observer/target sampling weights",
+      "Ellipsoid shape, density, growth, bullets and HE holes are uncalibrated",
+      "No match winner, survival or causal impact is derived from this proxy"
+    ]
+  },
+  "players": {
+    "players_with_recorded_throws": 89052,
+    "eligible_flash_estimates": 34,
+    "eligibility": "At least 50 known flashes, five matches, and no match contributing over 50% of the known flashes",
+    "units": "HP, distinct blinded-player events, native FlashDurationAdded, static line ratio; these are never added into one score",
+    "flash_above_expectation": "Mean(observed binary flash effect minus match-held-out model probability), known outcomes only; retrospective model-relative residual, not causal contribution or an overall player rating",
+    "interval": "300 whole-match bootstrap resamples for eligible players; null for sparse records",
+    "coverage": "Known/total outcomes shown separately by grenade type; amounts sum recorded known effects only",
+    "limitations": [
+      "Unobserved opponent context and missing outcomes can bias player comparisons",
+      "The same player can appear in multiple source matches; no prospective skill ranking",
+      "No KPD, wins or survival is fabricated from grenade records"
+    ]
+  },
+  "demo_import": {
+    "upstream": "https://github.com/Gary2005/cs-net",
+    "reviewed_commit": "268dd2193c8a3d6e330c07dde5a851196c94eeaa",
+    "input_sha256": "1ee6b90ef7cefa1c01510c57c5a16b8108bd4fd5aa85c4f0e78d6fc0581cfaa1",
+    "map": "de_mirage",
+    "match_id": "demoparser-integration-example",
+    "round_offset": 0,
+    "id_scheme": "steam64",
+    "geometry_compatibility": "not_used",
+    "eye_height_sources": [
+      "assumed_from_duck_amount_64_to_46_units; not a measured camera origin"
+    ],
+    "smokes_with_recorded_owner": 40,
+    "rounds": 10,
+    "player_rounds": 99,
+    "alive_end_known": 99,
+    "smoke_intervals": 40,
+    "kpd_definition": null,
+    "smoke_scoring": false,
+    "assumptions": {
+      "eye_height": 64.0,
+      "cone_fov_degrees": 90.0,
+      "max_sample_gap_seconds": 0.5
+    },
+    "limitations": [
+      "Eye height uses supplied per-tick values when present, otherwise the configured assumption; cone FOV is assumed",
+      "Smoke volume is approximate; static geometry may differ from the demo's game version",
+      "Original CS-NET intervals omit projectile/thrower IDs; explicit parser extensions are retained, never guessed",
+      "Survival, winner and damage are retrospective outcomes and must not become prethrow features",
+      "An observed association with survival or victory is not a causal grenade effect",
+      "No CS-NET checkpoint is loaded; no model probability is used as an observed label"
+    ],
+    "conversion": {
+      "map": "de_mirage",
+      "rounds": 10,
+      "players": 10,
+      "smokes": 40,
+      "source": {
+        "demo_sha256": "84a1a4191302bdd2a3bbb5a727842093744b1fb1a228aeec630369e44b622cb2",
+        "header": {
+          "allow_clientside_entities": "true",
+          "demo_version_guid": "8e9d71ab-04a1-4c01-bb61-acfede27c046",
+          "map_name": "de_mirage",
+          "client_name": "SourceTV Demo",
+          "addons": "",
+          "game_directory": "/opt/srcds/cs2/csgo_v2000228/csgo",
+          "demo_version_name": "valve_demo_2",
+          "demo_file_stamp": "PBDEMS2\u0000",
+          "server_name": "Valve Counter-Strike 2 helsinki Server (srcds1029-hel1.380.15)",
+          "fullpackets_version": "2",
+          "allow_clientside_particles": "true",
+          "patch_version": "13984"
+        },
+        "parser": "demoparser2",
+        "parser_version": "0.42.0",
+        "sample_ticks": 16,
+        "dropped_duplicate_game_time_samples": 0,
+        "round_outcome_reference": "Exact recorded round_end tick, inclusive; post-round deaths excluded",
+        "eye_height": "Assumed 64 - 18*duck_amount units, not measured camera telemetry",
+        "identity": "Exact SteamID64; owner/entity identifiers come from smoke events, not spatial matching"
+      },
+      "export_sha256": "1ee6b90ef7cefa1c01510c57c5a16b8108bd4fd5aa85c4f0e78d6fc0581cfaa1"
+    },
+    "scope": "Parser/importer integration only; Mirage data is not Cache training or Cache smoke validation",
+    "demo_source": "https://github.com/LaihoE/demoparser/blob/45ca85aeac8fb0de9d385124d2c7fe0e7b8ff0c8/src/parser/test_demo.dem",
+    "demo_sha256": "84a1a4191302bdd2a3bbb5a727842093744b1fb1a228aeec630369e44b622cb2",
+    "fixture_file": "tests/fixtures/demoparser_round.json.gz",
+    "direct_cli_verified": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "source_file": "grenades_by_match_0726.list",
+  "source_bytes": 1566906554,
+  "source_sha256": "4edf4e909349d5131ac39a6d97a9bd49436772c939c7ade3d897713dca8ebe17",
+  "matches": 10000,
+  "counts": {
+    "Smokes": 729947,
+    "Smokes/known": 0,
+    "Smokes/positive": 0,
+    "Flashbangs": 643914,
+    "Flashbangs/known": 518976,
+    "Flashbangs/positive": 332083,
+    "HEs": 565392,
+    "HEs/known": 216234,
+    "HEs/positive": 207380,
+    "Fires": 446164,
+    "Fires/known": 60115,
+    "Fires/positive": 60115
+  },
+  "rows": 2385417,
+  "schema_version": 1,
+  "event_file": "events.parquet",
+  "limitations": [
+    "No synchronous all-player snapshots",
+    "No round winners or independent game KPI",
+    "Tick fields are original projectile ticks; smoke lifetime is not inferred",
+    "Effect measurement units are preserved from the source"
+  ],
+  "matches_with_events": 9984,
+  "empty_match_ids": [
+    "3830882722318909665",
+    "3830895849886449884",
+    "3830992059301363846",
+    "3831011292164915917",
+    "3831013463270883385",
+    "3831016134740541619",
+    "3831024441207292006",
+    "3831078435388653677",
+    "3831179008490340536",
+    "3831185017149587735",
+    "3831190821797888026",
+    "3831210269409805379",
+    "3831211549310058942",
+    "3831221584501146263",
+    "3831257284269310123",
+    "3831265328743055525"
+  ]
+}

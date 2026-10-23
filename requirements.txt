@@ -1,0 +1,16 @@
+# Python 3.12, Windows x64. Проверенные версии для расчётов и визуализации.
+numpy==2.3.5
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+joblib==1.6.0
+threadpoolctl==3.7.0
+cloudpickle==3.1.2
+narwhals==2.27.1
+
+# Просмотр графиков внутри Jupyter; расчётный модуль остаётся обычным Python.
+jupyterlab==4.6.4
+ipykernel==7.4.0
+ipython==9.17.1
+nbformat==5.11.1
+matplotlib-inline==0.2.2

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scope-cache"
+version = "0.4.0"
+description = "Анализ гранат на Cache: урон, ослепление и геометрия смоков"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy==2.3.5", "scipy==1.17.0", "scikit-learn==1.8.0",
+  "matplotlib==3.10.8", "joblib==1.5.3", "threadpoolctl==3.6.0",
+  "catboost==1.2.10", "awpy==3.1.1", "pyarrow==23.0.1", "pandas==2.2.3"
+]
+
+[project.optional-dependencies]
+notebook = ["jupyterlab==4.4.10", "ipykernel==6.29.5", "ipython==9.17.1", "nbformat==5.10.4", "nbclient==0.10.2", "matplotlib-inline==0.2.2"]
+demo = ["demoparser2==0.42.0"]
+dev = ["ruff==0.14.0"]
+
+[tool.setuptools]
+packages = ["scope_cache"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100

@@ -1,0 +1,22 @@
+name: Validate Cache Utility
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - run: python -m pip install -e ".[dev,notebook,demo]"
+      - run: python -m ruff check .
+      - run: python scope.py doctor
+      - run: python scope.py check
+      - run: python scope.py score --input tests/fixtures/grenades.json --mode release
+      - name: Complete data audit and notebook
+        if: ${{ hashFiles('data/events.parquet') != '' && hashFiles('data/release_context.parquet') != '' && hashFiles('data/grenade_scores.parquet') != '' && hashFiles('data/player_utility_profiles.parquet') != '' }}
+        run: |
+          python scope.py audit
+          python scope.py report --output "${{ runner.temp }}/utility_analysis.ipynb"

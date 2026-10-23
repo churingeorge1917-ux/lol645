@@ -1,0 +1,17 @@
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.ruff_cache/
+.pytest_cache/
+*.building.parquet
+*.tmp
+*.list
+*.zip
+MANIFEST.json
+data/*.parquet
+demo_context/
+figures/
+data/.*
