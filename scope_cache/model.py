@@ -359,8 +359,6 @@ def train(
         high = precision_threshold(y[tr], all_oof[selected])
         eval_model = clone(prototype).fit(xx[tr], y[tr])
         ptest = eval_model.predict_proba(xx[te])[:, 1]
-        # Both regression heads are cross-fitted too, so player profiles never
-        # mix OOF probabilities with in-sample fitted severity.
         oof_amount = np.full(len(tr), np.nan)
         oof_count = np.full(len(tr), np.nan)
         for i, (a, b) in enumerate(cv):
@@ -380,7 +378,6 @@ def train(
             x[tr, : len(SETUP_FEATURES)], y[tr]
         )
         baseline_probability = baseline_model.predict_proba(x[te, : len(SETUP_FEATURES)])[:, 1]
-        # Release-time model is frozen before the full-data deployment refit.
         production = clone(prototype).fit(xx, y)
         positive_all = np.flatnonzero(y == 1)
         deploy_amount = severity_model().fit(x[positive_all], amount[positive_all])
@@ -558,11 +555,6 @@ def train(
 
 
 def complete_bundle(path=DEFAULT_MODEL, table=None, x=None):
-    """Finish the setup fallback refit and bounded count post-processing.
-
-    Classification parameters and held-out probabilities remain fixed. Count
-    clipping follows the observed five-opponent support, never test optimization.
-    """
     path = Path(path)
     report = json.loads(path.with_suffix(".metadata.json").read_text())
     bundle = joblib.load(path)
