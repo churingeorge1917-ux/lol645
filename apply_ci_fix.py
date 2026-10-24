@@ -1,5 +1,4 @@
-"""Apply and stage the tested CI fix from the root of scope_cache_poc."""
-
+### технический файл, чтобы пофиксить ошибику при загрузке данных на гитхаб. не стоит рассматривать как что-то важное для проекта
 from __future__ import annotations
 
 import hashlib
