@@ -1,5 +1,3 @@
-"""Check that the report figures render without the full source dataset."""
-
 import json
 import unittest
 from unittest.mock import patch
