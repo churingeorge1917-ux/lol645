@@ -33,7 +33,6 @@ from scope_cache.model import (
 
 
 class WeightedMetrics:
-    """Pre-sort scores once; bootstrap weights repeat entire matches, never rows."""
 
     def __init__(self, y, p, threshold=0.5):
         self.y = np.asarray(y, float)
@@ -188,8 +187,6 @@ def diagnose_model(model_path=DEFAULT_MODEL, root=ROOT):
                     "metrics": metrics(y[choose], p[choose], meta["decision_threshold"]),
                 }
             )
-    # A genuine information ablation: same HGB hyperparameters, same folds,
-    # same label population; only release-time information is removed.
     tr, te, cv, _ = split_indices(x, y, groups, 42, meta["selection"]["fold_count"])
     prototype = HistGradientBoostingClassifier(
         max_iter=200,
@@ -238,8 +235,6 @@ def diagnose_model(model_path=DEFAULT_MODEL, root=ROOT):
     pq.write_table(records, model_path.with_suffix(".validation.parquet"), compression="zstd")
     meta["predictions_sha256"] = sha256_file(model_path.with_suffix(".validation.parquet"))
     model_path.with_suffix(".metadata.json").write_text(json.dumps(meta, indent=2) + "\n")
-    # Predictability of registration is a warning diagnostic, not a method for
-    # fabricating labels or correcting missing outcomes by unverified weighting.
     all_flashes = flash_table(
         root / "data" / "events.parquet",
         root / "data" / "release_context.parquet",
@@ -272,7 +267,6 @@ def diagnose_model(model_path=DEFAULT_MODEL, root=ROOT):
         "registration_prediction_test": metrics(known[held].astype(np.int8), reg_p),
         "interpretation": "Predictable registration suggests selection differences; no missing-at-random claim, no label imputation or inverse-probability causal correction",
     }
-    # Deterministic examples of held-out failures, not a cherry-picked test set.
     errors = np.flatnonzero(test & ((p >= meta["decision_threshold"]) != y))
     ordered = errors[np.argsort(-np.abs(p[errors] - y[errors]))[:20]]
     examples = []
