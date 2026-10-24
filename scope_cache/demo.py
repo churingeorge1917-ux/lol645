@@ -161,12 +161,6 @@ def validate_round(round_data, player_count):
 
 
 def round_records(demo, round_data, match_id, round_offset=0, player_map=None, max_gap=0.5):
-    """Observed outcomes and sampled movement, separate from prethrow inputs.
-
-    A complete kills timeline in a completed CS-NET round establishes survival;
-    the last sampled tick alone may precede the final death. Missing event lists
-    remain unknown. Unknown winner never defaults to CT.
-    """
     roster, players = demo["players"], round_data["players"]
     validate_round(round_data, len(roster))
     teams, times = round_data["teams"], np.asarray(round_data["round_seconds"], float)
@@ -317,12 +311,6 @@ def sampled_states(demo, round_data, match_id, round_offset, player_map, eye_hei
 
 
 def smoke_exposure(round_data, geometry, *, eye_height=64.0, fov_degrees=90.0, max_gap=0.5):
-    """Integrate sampled opponent sightline blockage, accounting for overlap.
-
-    Both sides' directed views are counted separately. Marginal blockage counts
-    only lines blocked by this smoke and by no other active smoke. No thrower is
-    assigned: CS-NET's smoke intervals omit projectile and thrower identifiers.
-    """
     if not 0 < fov_degrees < 180 or max_gap <= 0 or not math.isfinite(eye_height):
         raise ValueError("Invalid FOV, eye height or maximum sample gap")
     smokes = round_data.get("events", {}).get("smokes", [])
@@ -349,8 +337,6 @@ def smoke_exposure(round_data, geometry, *, eye_height=64.0, fov_degrees=90.0, m
         begin, end = float(times[t]), float(times[t + 1])
         if end - begin > max_gap:
             continue
-        # Split integration at smoke start/end boundaries; player state is held
-        # constant until the next sampled tick (an explicit approximation).
         boundaries = sorted(
             {
                 begin,
@@ -435,7 +421,6 @@ def join_events(events, context):
     identities = list(zip(*(context[key].to_pylist() for key in keys)))
     if len(set(identities)) != len(identities):
         raise ValueError("Duplicate player-round context")
-    # Preserve every original event, its ordering, and unknown contexts.
     indexed = events.append_column("_event_row", pa.array(np.arange(len(events))))
     joined = indexed.join(context, keys=keys, join_type="left outer").sort_by(
         [("_event_row", "ascending")]
@@ -645,7 +630,6 @@ def _import_demo(
 
 
 def import_demo(path, output, **kwargs):
-    """Validate and write into a sibling staging directory, then install atomically."""
     output = Path(output)
     if output.exists() and any(output.iterdir()):
         raise ValueError("Choose an empty output directory to avoid mixing demos")
@@ -849,8 +833,6 @@ def convert(path, output, *, expected_map="de_cache", sample_ticks=16, max_round
             timeline["disconnects"].append(
                 {"t": int(row["tick"]), "p": player_index(row.get("user_steamid"))}
             )
-        # Pair expirations by exact engine entity ID and temporal lifecycle.
-        # A missing expiration stays open, clipped by the sampled round span.
         for _, row in inside(smoke_start, a, b).iterrows():
             eid = int(row["entityid"])
             end = (
