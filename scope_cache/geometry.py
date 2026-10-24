@@ -37,7 +37,6 @@ def segment_distances(a, b, point):
 
 
 def smoke_chords(a, b, center, radius_xy=144.0, radius_z=96.0):
-    """Length of the finite segment inside an ellipsoid; tangencies have zero length."""
     if radius_xy <= 0 or radius_z <= 0:
         raise ValueError("Smoke radii must be positive")
     a, b, center = (
@@ -129,7 +128,6 @@ class MapGeometry:
         }
 
     def snapshot_blocking(self, smoke_endpoint, players, *, tick, smoke_begin, smoke_end):
-        """Optional same-tick eye/gaze telemetry; uses a cone FOV approximation."""
         if not smoke_begin <= tick < smoke_end:
             return {"status": "inactive_smoke", "eligible_pairs": 0, "blocked_pairs": 0}
         if any(p.get("tick") != tick for p in players):
@@ -193,7 +191,6 @@ def build_sightlines(assets=ASSETS):
     vertices, triangles = read_mesh(assets / "de_cache.mesh")
     nav = NavMesh(assets / "de_cache.nav")
     areas = nav.areas.to_pandas()
-    # Deterministic 128-unit XY bins; keep a real navigation centroid per bin.
     areas["gx"] = np.floor(areas.centroid_x / 128).astype(int)
     areas["gy"] = np.floor(areas.centroid_y / 128).astype(int)
     areas["gz"] = np.floor(areas.centroid_z / 64).astype(int)
@@ -323,7 +320,6 @@ def fetch(version=PINNED_VERSION, output=ASSETS):
                 "bytes": path.stat().st_size,
                 "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
             }
-        # All release checks pass before replacing the prepared map files.
         output.mkdir(parents=True, exist_ok=True)
         for name in report["files"]:
             (output / name).write_bytes((staging / name).read_bytes())
