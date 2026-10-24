@@ -54,11 +54,6 @@ EFFECT_FIELDS = (
 
 
 def match_profiles(match: dict) -> list[dict]:
-    """Все гранаты каждого игрока за матч по текущему определению импакта.
-
-    Дым входит в число бросков, но не в знаменатель доли эффекта.
-    Игроки из состава без гранат также сохраняются. Это не общий КПД.
-    """
     players = {
         str(player["StaticInfo"]["PlayerID"]): Counter() for player in match["Players"]
     }
@@ -154,13 +149,12 @@ def profile_summary(connection: sqlite3.Connection, source_hash: str) -> dict:
             totals,
         ),
         source_sha256=source_hash,
-        definition="Любой положительный урон HP или добавленное ослепление противника; дым исключён из долей; пропуски неизвестны.",
-        scope="Все гранаты, без фильтра близости к эталонам; обе стороны за матч суммарно.",
+        definition="Любой положительный урон HP или добавленное ослепление противника; дым исключён из долей.",
+        scope="Все гранаты, без фильтра близости к эталонам. рассчитывается как обе стороны за матч суммарно.",
     )
 
 
 def refresh_player_matches(source: Path, target: Path) -> dict:
-    """Пересчитать полный профиль из исходника, не меняя модель и её выборку."""
     with database(target) as connection:
         read_document(connection, "source")
         extraction = read_document(connection, "extraction")
@@ -208,8 +202,7 @@ def refresh_player_matches(source: Path, target: Path) -> dict:
 
 
 class Team(IntEnum):
-    """Коды стороны в момент события, а не постоянные составы команд."""
-
+#коды при просмотре демки и визуализации датасета
     UNASSIGNED = 0
     SPECTATOR = 1
     T = 2
@@ -289,7 +282,6 @@ def summarize_geometry(rows: list[dict]) -> list[dict]:
 
 
 def reference_associations(rows: list[dict], repetitions: int = 1000) -> list[dict]:
-    """Phi и разность долей; интервал получаем пересэмплированием целых матчей."""
     groups = {}
     for row in rows:
         if not row["standing"]:
@@ -492,7 +484,6 @@ CONTEXT_COLUMNS = (
 
 
 def load_context(path: Path, definition: str, source_matches: set[str]) -> list[dict]:
-    """Проверить внешний независимый КПД и исходы до соединения таблиц."""
     if not definition.strip():
         raise ValueError(
             "Нужно описать независимое определение КПД через --kpd-definition."
@@ -542,9 +533,7 @@ def load_context(path: Path, definition: str, source_matches: set[str]) -> list[
 
 
 def correlation_interval(rows: list[dict], x: str, y: str, repetitions: int) -> dict:
-    """Pearson/Spearman; неопределённость Pearson с кластеризацией по матчу."""
     from scipy.stats import rankdata
-
     values = np.asarray([[r[x], r[y]] for r in rows], dtype=float).reshape(-1, 2)
 
     def coefficient(array: np.ndarray) -> float | None:
@@ -586,7 +575,6 @@ def correlation_interval(rows: list[dict], x: str, y: str, repetitions: int) -> 
 
 
 def player_rounds(rows: list[dict]) -> dict[tuple, dict]:
-    """Гранаты только покрытой пулом части, а не полная статистика игрока."""
     counts = defaultdict(Counter)
     for row in rows:
         key = row["match_id"], row["round"], str(row["player_id"]), row["side"]
@@ -1092,7 +1080,7 @@ def main() -> None:
     preparation.add_argument(
         "--rebuild-source",
         type=Path,
-        help="Повторить подготовку из исходного pickle; длительная операция",
+        help="Повторить подготовку из исходного pickle",
     )
     preparation.add_argument(
         "--refresh-player-matches",
