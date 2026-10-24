@@ -26,8 +26,6 @@ from scope_cache import ROOT
 
 
 class Team(IntEnum):
-    """Коды стороны в момент события, а не постоянные составы команд."""
-
     UNASSIGNED = 0
     SPECTATOR = 1
     T = 2
@@ -42,12 +40,6 @@ class ObjectId:
 
 
 class BoundedMemo:
-    """Compact memo: repeated strings share atoms, finished containers expire.
-
-    Keeping a Python dict entry for every repeated BSON key consumes much more
-    RAM than the events themselves. A 32-bit array preserves original pickle
-    memo indexes; a small atom table shares strings/bytes/classes by value.
-    """
 
     def __init__(self):
         self.index = array("i")
@@ -136,7 +128,6 @@ def direction(pitch, yaw):
 
 
 def enemy_effect(grenade, kind):
-    """Пропущенный список целей остаётся неизвестным; союзники и сам игрок — отдельно."""
     info = grenade["GeneralInfo"]
     result = {
         "impact": None,
