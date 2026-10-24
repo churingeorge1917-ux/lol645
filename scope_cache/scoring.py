@@ -1,4 +1,4 @@
-"""Показатели гранат и игроков; наблюдения отделены от прогнозов."""
+"""Показатели гранат и игроков"""
 
 from __future__ import annotations
 
@@ -382,7 +382,6 @@ def player_profiles(root=ROOT):
             low,
             high,
         ]
-    # Only counts are filled with zero. Missing measured amounts/rates remain null.
     counts = [c for c in profiles.columns if c.endswith(("_throws", "_known"))]
     profiles[counts] = profiles[counts].fillna(0).astype("int64")
     profiles = profiles.reset_index()
